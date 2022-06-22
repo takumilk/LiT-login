@@ -32,9 +32,8 @@ post "/signup" do
         password: params[:password],
         password_confirmation: params[:password_confirmation]
         )
-    p @user.id
     if user.persisted?
-        session[:user] = @user.id
+        session[:user] = user.id
     end
     redirect "/"
 end
